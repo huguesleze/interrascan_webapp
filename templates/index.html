@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>InterraScan : Proposer 1 ou plusieurs offres commerciales</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div id="branding">
+                <h1>InterraScan : Proposer 1 ou plusieurs offres commerciales</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li class="current"><a href="/">Calculer</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <form method="post" style="margin-top: 20px;">
+            <div class="form-field">
+                <label for="margin_percentage">Marge Distributeur :</label>
+                <input type="number" name="margin_percentage" min="0" required>
+            </div>
+            <div class="form-field">
+                <label for="hectares">Surface souhaitée :</label>
+                <input type="number" name="hectares" min="25" max="2500" required>
+            </div>
+            <div class="form-field">
+                <label for="fields">Nombre de parcelle :</label>
+                <input type="number" name="fields" min="1" max="100" required>
+            </div>
+            <div class="form-field">
+                <label>Package :</label>
+                <div class="radio-columns">
+                    <div class="radio-column">
+                        <label><input type="radio" name="pack_type" value="PACK-STANDARD" required> Standard</label>
+                        <label><input type="radio" name="pack_type" value="PACK-CARBONE"> Carbone</label>
+                    </div>
+                    <div class="radio-column">
+                        <label><input type="radio" name="pack_type" value="PACK-PREMIUM"> Premium</label>
+                        <label><input type="radio" name="pack_type" value="PACK-PREMIUM-CARBONE"> Premium & Carbone</label>
+                    </div>
+                </div>
+            </div>
+            <div class="form-field">
+                <label for="years">Years:</label>
+                <select name="years" required>
+                    <option value="3">3 ans</option>
+                    <option value="4">4 ans</option>
+                    <option value="5">5 ans</option>
+                </select>
+            </div>
+            <input type="submit" value="Calculate" class="button">
+        </form>
+    </div>
+</body>
+</html>

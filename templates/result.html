@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculation Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div id="branding">
+                <h1>InterraScan Calculator - Results</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="/">New Calculation</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <h2>Calculation Result</h2>
+        <div class="result-field">
+            <p><strong>Grower Price:</strong> €{{ grower_price }}</p>
+            <p><strong>Reseller Price:</strong> €{{ reseller_price }}</p>
+            <p><strong>Days Required to Scan:</strong> {{ days_required }}</p>
+        </div>
+        <a href="/" class="button">New Calculation</a>
+    </div>
+</body>
+</html>
